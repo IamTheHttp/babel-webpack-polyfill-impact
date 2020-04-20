@@ -1,0 +1,27 @@
+{
+  "name": "babel-webpack-polyfill-impact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "transpile-just-promise": "npx babel src/just-promise.js --out-file babelify/just-promise.js",
+    "transpile-promise-with-spread": "npx babel src/promise-with-spread.js --out-file babelify/promise-with-spread.js",
+    "transpile-promise-with-spread-no-ie": "BROWSERSLIST_CONFIG=.browserslistrc-no-ie npx babel src/promise-with-spread.js --out-file babelify/promise-with-spread-no-ie.js",
+    "transpile-promise-with-spread-just-chrome": "BROWSERSLIST_CONFIG=.browserslistrc-just-chrome npx babel src/promise-with-spread.js --out-file babelify/promise-with-spread-just-chrome.js",
+    "transpile": "npm run transpile-just-promise && npm run transpile-promise-with-spread && npm run transpile-promise-with-spread-no-ie && npm run transpile-promise-with-spread-just-chrome"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
